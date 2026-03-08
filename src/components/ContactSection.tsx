@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Phone, MapPin, Send, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import { Mail, Github, Linkedin, Phone, MapPin } from "lucide-react";
 
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/ImethDewmina128" },
@@ -21,31 +18,6 @@ const itemVariants = {
 };
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-  const [sending, setSending] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill in all required fields.");
-      return;
-    }
-    setSending(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
-      if (error) throw error;
-      if (data?.error) throw new Error(data.error);
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (err: any) {
-      toast.error(err.message || "Failed to send message. Please try again.");
-    } finally {
-      setSending(false);
-    }
-  };
-
   return (
     <motion.section
       id="contact"
@@ -62,7 +34,7 @@ const ContactSection = () => {
               Contact
             </h2>
             <p className="text-muted-foreground mb-10">
-              Have a question or want to work together? Send me a message!
+              Have a question or want to work together? Get in touch!
             </p>
 
             <div className="space-y-4 border-l-2 border-primary pl-6">
@@ -89,60 +61,10 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label className="text-sm font-display text-muted-foreground mb-1.5 block">Name *</label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-muted-foreground/50"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-sm font-display text-muted-foreground mb-1.5 block">Email *</label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-muted-foreground/50"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-sm font-display text-muted-foreground mb-1.5 block">Subject</label>
-                <input
-                  type="text"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-muted-foreground/50"
-                  placeholder="Subject (optional)"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-display text-muted-foreground mb-1.5 block">Message *</label>
-                <textarea
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={5}
-                  className="w-full bg-secondary border border-border rounded px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-muted-foreground/50"
-                  placeholder="Your message..."
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={sending}
-                className="bg-primary text-primary-foreground px-8 py-3.5 rounded font-display font-medium hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2"
-              >
-                {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-                {sending ? "Sending..." : "Send Message"}
-              </button>
-            </form>
+          <motion.div variants={itemVariants} className="flex flex-col items-start md:items-end justify-center">
+            <a href="mailto:imeth128@gmail.com" className="bg-primary text-primary-foreground px-10 py-4 rounded font-display font-medium text-lg hover:opacity-90 transition-opacity">
+              Send Message
+            </a>
           </motion.div>
         </div>
 
