@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/imeth-profile.jpg";
+import cv2Img from "@/assets/cv_2.png";
+import imethb2Img from "@/assets/imethb-2.jpg";
+import imethbImg from "@/assets/imethb.jpg";
 import LiquidEther from "./LiquidEther";
+import Stack from "./Stack";
 
 
 const HeroSection = () => {
@@ -90,33 +94,57 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Profile photos */}
+        {/* Profile photos stack */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="relative hidden md:block"
         >
-          <div className="w-64 lg:w-80">
-            <img
-              src={profileImg}
-              alt="Imeth Dewina"
-              className="w-full aspect-[3/4] object-cover rounded shadow-2xl shadow-primary/10 border border-border"
+          <div className="w-64 lg:w-80 aspect-[3/4]">
+            <Stack
+              randomRotation
+              sensitivity={200}
+              sendToBackOnClick
+              autoplay
+              autoplayDelay={2500}
+              pauseOnHover
+              cards={[profileImg, cv2Img, imethb2Img, imethbImg].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Imeth Dewina ${i + 1}`}
+                  className="w-full h-full object-cover pointer-events-none"
+                />
+              ))}
             />
           </div>
         </motion.div>
       </div>
 
-      {/* Mobile profile photo */}
+      {/* Mobile profile photo stack */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
         className="md:hidden mt-10 flex justify-center relative z-10"
       >
-        <img
-          src={profileImg}
-          alt="Imeth Dewina"
-          className="w-48 aspect-[3/4] object-cover rounded shadow-xl border border-border"
-        />
+        <div className="w-48 aspect-[3/4]">
+          <Stack
+            randomRotation
+            sensitivity={200}
+            sendToBackOnClick
+            autoplay
+            autoplayDelay={2500}
+            pauseOnHover
+            cards={[profileImg, cv2Img, imethb2Img, imethbImg].map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`Imeth Dewina ${i + 1}`}
+                className="w-full h-full object-cover pointer-events-none"
+              />
+            ))}
+          />
+        </div>
       </motion.div>
 
       <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display z-10">
