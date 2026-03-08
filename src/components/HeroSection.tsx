@@ -38,7 +38,7 @@ const HeroSection = () => {
         </motion.svg>
       </div>
 
-      <div className="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center">
+      <div className="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center relative z-10">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
