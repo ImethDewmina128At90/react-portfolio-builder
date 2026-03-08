@@ -25,16 +25,16 @@ const AboutSection = () => {
   return (
     <motion.section
       id="about"
-      className="py-24 px-6 md:px-16 lg:px-24"
+      className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 lg:px-24"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionVariants}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-12 md:mb-20">
           <motion.div variants={itemVariants}>
-            <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8">
+            <h2 className="font-serif-display text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-6 md:mb-8">
               About Me
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">

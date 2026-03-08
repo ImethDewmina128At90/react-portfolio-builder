@@ -38,14 +38,14 @@ const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className="py-24 px-6 md:px-16 lg:px-24 border-t border-border"
+      className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 lg:px-24 border-t border-border"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionVariants}
     >
       <div className="max-w-6xl mx-auto">
-        <motion.h2 variants={itemVariants} className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+        <motion.h2 variants={itemVariants} className="font-serif-display text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-6">
           Project Highlights
         </motion.h2>
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between gap-4 mb-16">

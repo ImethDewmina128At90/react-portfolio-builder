@@ -21,16 +21,16 @@ const ContactSection = () => {
   return (
     <motion.section
       id="contact"
-      className="py-24 px-6 md:px-16 lg:px-24 border-t border-border"
+      className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 lg:px-24 border-t border-border"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionVariants}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <motion.div variants={itemVariants}>
-            <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+            <h2 className="font-serif-display text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-6">
               Contact
             </h2>
             <p className="text-muted-foreground mb-10">
@@ -61,14 +61,14 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-col items-start md:items-end justify-center">
+          <motion.div variants={itemVariants} className="flex flex-col items-start md:items-end justify-center mt-4 md:mt-0">
             <a href="mailto:imeth128@gmail.com" className="bg-primary text-primary-foreground px-10 py-4 rounded font-display font-medium text-lg hover:opacity-90 transition-opacity">
               Send Message
             </a>
           </motion.div>
         </div>
 
-        <div className="mt-20 flex justify-between items-center text-sm text-muted-foreground font-display">
+        <div className="mt-12 sm:mt-20 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs sm:text-sm text-muted-foreground font-display">
           <span>Software Developer</span>
           <span>© 2026 Imeth Dewina</span>
         </div>
