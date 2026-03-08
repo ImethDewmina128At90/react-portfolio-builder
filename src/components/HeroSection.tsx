@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/imeth-profile.jpg";
-import profileImg2 from "@/assets/imethb.jpg";
 
 const HeroSection = () => {
   return (
@@ -74,16 +73,11 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="relative hidden md:block"
         >
-          <div className="relative w-64 lg:w-80">
+          <div className="w-64 lg:w-80">
             <img
               src={profileImg}
               alt="Imeth Dewina"
               className="w-full aspect-[3/4] object-cover rounded shadow-2xl shadow-primary/10 border border-border"
-            />
-            <img
-              src={profileImg2}
-              alt="Imeth Dewina"
-              className="absolute -bottom-8 -left-12 w-32 lg:w-40 aspect-square object-cover rounded shadow-xl border-2 border-background"
             />
           </div>
         </motion.div>
