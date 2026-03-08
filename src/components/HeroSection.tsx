@@ -109,7 +109,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="md:hidden mt-10 flex justify-center"
+        className="md:hidden mt-10 flex justify-center relative z-10"
       >
         <img
           src={profileImg}
@@ -118,10 +118,10 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display">
+      <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display z-10">
         Software Developer
       </div>
-      <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 text-sm text-muted-foreground font-display">
+      <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 text-sm text-muted-foreground font-display z-10">
         2026
       </div>
     </section>
