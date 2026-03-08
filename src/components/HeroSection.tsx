@@ -27,7 +27,7 @@ const HeroSection = () => {
       </div>
 
       {/* Decorative sparkle */}
-      <div className="absolute top-1/4 right-[15%] hidden md:block">
+      <div className="absolute top-1/4 right-[15%] hidden md:block z-10">
         <motion.svg
           width="60" height="60" viewBox="0 0 60 60" fill="none"
           className="text-foreground"
