@@ -3,7 +3,6 @@ import profileImg from "@/assets/imeth-profile.jpg";
 import cv2Img from "@/assets/cv_2.png";
 import imethb2Img from "@/assets/imethb-2.jpg";
 import LiquidEther from "./LiquidEther";
-import LiquidEther from "./LiquidEther";
 import Stack from "./Stack";
 
 
