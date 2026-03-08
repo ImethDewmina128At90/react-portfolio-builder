@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Phone, MapPin } from "lucide-react";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com/ImethDewmina128" },
+  { icon: Github, label: "GitHub", href: "https://github.com/ImethDewmina128At90" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/imethdewmina" },
   { icon: Mail, label: "Email", href: "mailto:imeth128@gmail.com" },
 ];
