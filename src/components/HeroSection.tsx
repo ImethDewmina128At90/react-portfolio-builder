@@ -1,40 +1,106 @@
+import { motion } from "framer-motion";
+import profileImg from "@/assets/imeth-profile.jpg";
+import profileImg2 from "@/assets/imethb.jpg";
+
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Decorative sparkle */}
       <div className="absolute top-1/4 right-[15%] hidden md:block">
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" className="text-foreground animate-spin" style={{ animationDuration: '8s' }}>
+        <motion.svg
+          width="60" height="60" viewBox="0 0 60 60" fill="none"
+          className="text-foreground"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        >
           <path d="M30 0L32 28L60 30L32 32L30 60L28 32L0 30L28 28L30 0Z" fill="currentColor" />
-        </svg>
+        </motion.svg>
       </div>
 
-      <div className="max-w-6xl w-full mx-auto">
-        <p className="text-muted-foreground text-sm tracking-widest uppercase mb-8 animate-fade-in font-display">
-          Computer Science Undergraduate
-        </p>
+      <div className="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-muted-foreground text-sm tracking-widest uppercase mb-8 font-display"
+          >
+            Computer Science Undergraduate
+          </motion.p>
 
-        <h1 className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          <span className="font-serif-display text-primary text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
-            Imeth
-          </span>
-          <span className="font-display font-bold text-foreground text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
-            Dewina.
-          </span>
-        </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <span className="font-serif-display text-primary text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
+              Imeth
+            </span>
+            <span className="font-display font-bold text-foreground text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
+              Dewina.
+            </span>
+          </motion.h1>
 
-        <p className="text-muted-foreground text-base sm:text-lg max-w-lg leading-relaxed mt-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          A motivated, detail-oriented CS student passionate about web/software development and DevOps/cloud computing. Eager to contribute to innovative projects.
-        </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-muted-foreground text-base sm:text-lg max-w-lg leading-relaxed mt-10"
+          >
+            A motivated, detail-oriented CS student passionate about web/software development and DevOps/cloud computing. Eager to contribute to innovative projects.
+          </motion.p>
 
-        <div className="flex flex-wrap gap-4 mt-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <a href="#projects" className="bg-primary text-primary-foreground px-8 py-3.5 rounded font-display font-medium hover:opacity-90 transition-opacity">
-            View Work
-          </a>
-          <a href="#contact" className="border border-border px-8 py-3.5 rounded font-display font-medium text-foreground hover:bg-secondary transition-colors">
-            Contact
-          </a>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap gap-4 mt-10"
+          >
+            <a href="#projects" className="bg-primary text-primary-foreground px-8 py-3.5 rounded font-display font-medium hover:opacity-90 transition-opacity">
+              View Work
+            </a>
+            <a href="#contact" className="border border-border px-8 py-3.5 rounded font-display font-medium text-foreground hover:bg-secondary transition-colors">
+              Contact
+            </a>
+            <a
+              href="/Imeth_Dewina_CV.pdf"
+              download
+              className="border border-primary text-primary px-8 py-3.5 rounded font-display font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              Download CV
+            </a>
+          </motion.div>
         </div>
+
+        {/* Profile photos */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="relative hidden md:block"
+        >
+          <div className="relative w-64 lg:w-80">
+            <img
+              src={profileImg}
+              alt="Imeth Dewina"
+              className="w-full aspect-[3/4] object-cover rounded shadow-2xl shadow-primary/10 border border-border"
+            />
+            <img
+              src={profileImg2}
+              alt="Imeth Dewina"
+              className="absolute -bottom-8 -left-12 w-32 lg:w-40 aspect-square object-cover rounded shadow-xl border-2 border-background"
+            />
+          </div>
+        </motion.div>
       </div>
+
+      {/* Mobile profile photo */}
+      <motion.div
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="md:hidden mt-10 flex justify-center"
+      >
+        <img
+          src={profileImg}
+          alt="Imeth Dewina"
+          className="w-48 aspect-[3/4] object-cover rounded shadow-xl border border-border"
+        />
+      </motion.div>
 
       <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display">
         Software Developer

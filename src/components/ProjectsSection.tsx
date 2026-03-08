@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const projects = [
   {
     title: "NaviKid",
@@ -22,25 +24,46 @@ const projects = [
   },
 ];
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 px-6 md:px-16 lg:px-24 border-t border-border">
+    <motion.section
+      id="projects"
+      className="py-24 px-6 md:px-16 lg:px-24 border-t border-border"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={sectionVariants}
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+        <motion.h2 variants={itemVariants} className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
           Project Highlights
-        </h2>
-        <div className="flex flex-col sm:flex-row justify-between gap-4 mb-16">
+        </motion.h2>
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between gap-4 mb-16">
           <p className="text-muted-foreground max-w-sm text-sm">
             A selection of projects showcasing my approach to software development.
           </p>
-          <p className="text-muted-foreground max-w-sm text-sm text-right">
+          <p className="text-muted-foreground max-w-sm text-sm sm:text-right">
             Blending technical skills, problem-solving, and practical implementation.
           </p>
-        </div>
+        </motion.div>
 
         <div className="space-y-0">
           {projects.map((project, i) => (
-            <div key={i} className="group border-t border-border py-8 hover:bg-card/50 transition-colors px-2 -mx-2">
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              className="group border-t border-border py-8 hover:bg-card/50 transition-colors px-2 -mx-2"
+            >
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
                 <span className="text-primary font-display text-sm tracking-wider shrink-0 mt-1">{project.number}</span>
                 <div className="flex-1">
@@ -53,19 +76,17 @@ const ProjectsSection = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4 max-w-2xl">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="border border-border text-muted-foreground text-xs px-3 py-1 rounded font-display">
-                        {tag}
-                      </span>
+                      <span key={tag} className="border border-border text-muted-foreground text-xs px-3 py-1 rounded font-display">{tag}</span>
                     ))}
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
           <div className="border-t border-border" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
