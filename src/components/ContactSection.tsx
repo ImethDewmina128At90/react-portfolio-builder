@@ -4,7 +4,7 @@ const socials = [
   { icon: Github, label: "GitHub", href: "#" },
   { icon: Linkedin, label: "LinkedIn", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
+  { icon: Mail, label: "Email", href: "mailto:imeth128@gmail.com" },
 ];
 
 const ContactSection = () => {
@@ -18,8 +18,8 @@ const ContactSection = () => {
         <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
           I'm always open to new opportunities and interesting projects. Drop me a line!
         </p>
-        <a href="mailto:hello@example.com" className="inline-block bg-primary text-primary-foreground px-10 py-4 rounded-lg font-display font-medium text-lg hover:opacity-90 transition-opacity mb-12">
-          Say Hello
+        <a href="mailto:imeth128@gmail.com" className="inline-block bg-primary text-primary-foreground px-10 py-4 rounded-lg font-display font-medium text-lg hover:opacity-90 transition-opacity mb-12">
+          Send Message
         </a>
         <div className="flex justify-center gap-6">
           {socials.map(({ icon: Icon, label, href }) => (
