@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/imeth-profile.jpg";
 import LiquidEther from "./LiquidEther";
-import TextPressure from "./TextPressure";
+
 
 const HeroSection = () => {
   return (
