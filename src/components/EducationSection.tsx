@@ -1,4 +1,4 @@
-import { GraduationCap, School, BookOpen, Award } from "lucide-react";
+import { BookOpen, Award } from "lucide-react";
 
 const education = [
   {
@@ -6,7 +6,6 @@ const education = [
     institution: "University of Westminster",
     affiliate: "Informatics Institute of Technology",
     period: "2024 – Present",
-    icon: GraduationCap,
     modules: {
       "Year 1 (Completed)": [
         "Computer System Fundamentals", "Mathematics for Computing",
@@ -25,7 +24,6 @@ const education = [
     institution: "Gampaha Bandaranayake College",
     affiliate: "",
     period: "Completed",
-    icon: School,
     modules: {},
   },
 ];
@@ -42,37 +40,35 @@ const EducationSection = () => {
   return (
     <section id="education" className="py-24 px-6 md:px-16 lg:px-24 border-t border-border">
       <div className="max-w-6xl mx-auto">
-        <p className="text-primary font-display text-sm tracking-widest uppercase mb-3">Background</p>
-        <h2 className="text-3xl md:text-5xl font-display font-bold mb-14">Education</h2>
+        <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-16">
+          Education
+        </h2>
 
-        <div className="grid gap-6 mb-16">
+        <div className="space-y-8 mb-20">
           {education.map((edu, i) => (
-            <div key={i} className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:border-primary/30 transition-colors">
-              <div className="flex gap-4 sm:gap-6 items-start">
-                <div className="bg-secondary rounded-lg p-3 shrink-0">
-                  <edu.icon className="text-primary" size={28} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg sm:text-xl font-display font-bold mb-1">{edu.degree}</h3>
-                  <p className="text-foreground/90 font-medium">{edu.institution}</p>
-                  {edu.affiliate && (
-                    <p className="text-muted-foreground text-sm mt-1">{edu.affiliate}</p>
-                  )}
-                  <span className="inline-block mt-3 bg-secondary text-secondary-foreground text-xs px-3 py-1 rounded-md font-display">
-                    {edu.period}
-                  </span>
-                </div>
+            <div key={i} className="group">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground">{edu.degree}</h3>
+                <span className="text-sm text-primary font-display tracking-wider">{edu.period}</span>
               </div>
+              <p className="text-foreground/80 font-medium">{edu.institution}</p>
+              {edu.affiliate && (
+                <p className="text-muted-foreground text-sm mt-1">{edu.affiliate}</p>
+              )}
+              <div className="w-full h-px bg-border mt-4" />
+
               {Object.keys(edu.modules).length > 0 && (
-                <div className="mt-6 grid sm:grid-cols-2 gap-6 pl-0 sm:pl-16">
+                <div className="mt-6 grid sm:grid-cols-2 gap-8">
                   {Object.entries(edu.modules).map(([year, mods]) => (
                     <div key={year}>
-                      <p className="text-sm font-display font-semibold text-foreground mb-2 flex items-center gap-2">
-                        <BookOpen size={14} className="text-primary" /> {year}
+                      <p className="text-xs font-display font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                        <BookOpen size={12} className="text-primary" /> {year}
                       </p>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1.5">
                         {mods.map((mod) => (
-                          <li key={mod} className="text-sm text-muted-foreground">• {mod}</li>
+                          <li key={mod} className="text-sm text-muted-foreground pl-4 border-l border-border">
+                            {mod}
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -83,15 +79,16 @@ const EducationSection = () => {
           ))}
         </div>
 
+        {/* Certificates */}
         <div>
-          <p className="text-primary font-display text-sm tracking-widest uppercase mb-3 flex items-center gap-2">
-            <Award size={16} /> Certificates & Courses
+          <p className="text-xs text-muted-foreground font-display uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+            <Award size={14} className="text-primary" /> Certificates & Courses
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certificates.map((cert) => (
-              <span key={cert} className="bg-card border border-border text-foreground px-4 py-2 rounded-lg text-sm font-display hover:border-primary/30 transition-colors">
-                {cert}
-              </span>
+              <div key={cert} className="bg-card border border-border p-4 rounded hover:border-primary/40 transition-colors">
+                <span className="text-sm text-foreground font-display">{cert}</span>
+              </div>
             ))}
           </div>
         </div>

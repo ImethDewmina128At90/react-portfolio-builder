@@ -9,31 +9,51 @@ const socials = [
 const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-6 md:px-16 lg:px-24 border-t border-border">
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-primary font-display text-sm tracking-widest uppercase mb-3">Get In Touch</p>
-        <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-          Let's work together
-        </h2>
-        <p className="text-muted-foreground text-lg max-w-md mx-auto mb-6">
-          I'm always open to new opportunities and interesting projects. Drop me a line!
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-10">
-          <span className="flex items-center gap-1.5"><Phone size={14} className="text-primary" /> +94 77-9508456</span>
-          <span className="flex items-center gap-1.5"><MapPin size={14} className="text-primary" /> Colombo, Sri Lanka</span>
-        </div>
-        <a href="mailto:imeth128@gmail.com" className="inline-block bg-primary text-primary-foreground px-10 py-4 rounded-lg font-display font-medium text-lg hover:opacity-90 transition-opacity mb-12">
-          Send Message
-        </a>
-        <div className="flex justify-center gap-6">
-          {socials.map(({ icon: Icon, label, href }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={label}>
-              <Icon size={22} />
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+              Contact
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Thank you for viewing this portfolio!
+            </p>
+
+            <div className="space-y-4 border-l-2 border-primary pl-6">
+              <div className="flex items-center gap-3">
+                <Phone size={14} className="text-primary shrink-0" />
+                <span className="text-foreground text-sm">+94 77-9508456</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={14} className="text-primary shrink-0" />
+                <a href="mailto:imeth128@gmail.com" className="text-foreground text-sm hover:text-primary transition-colors">imeth128@gmail.com</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin size={14} className="text-primary shrink-0" />
+                <span className="text-foreground text-sm">Colombo, Sri Lanka</span>
+              </div>
+            </div>
+
+            <div className="flex gap-5 mt-10">
+              {socials.map(({ icon: Icon, label, href }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={label}>
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-start md:items-end justify-center">
+            <a href="mailto:imeth128@gmail.com" className="bg-primary text-primary-foreground px-10 py-4 rounded font-display font-medium text-lg hover:opacity-90 transition-opacity">
+              Send Message
             </a>
-          ))}
+          </div>
         </div>
-      </div>
-      <div className="mt-20 text-center text-sm text-muted-foreground font-display">
-        © 2026 Imeth Dewina. Built with React & Tailwind CSS.
+
+        <div className="mt-20 flex justify-between items-center text-sm text-muted-foreground font-display">
+          <span>Software Developer</span>
+          <span>© 2026 Imeth Dewina</span>
+        </div>
       </div>
     </section>
   );
