@@ -1,11 +1,33 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/imeth-profile.jpg";
+import LiquidEther from "./LiquidEther";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 relative overflow-hidden">
+      {/* LiquidEther background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <LiquidEther
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          mouseForce={20}
+          cursorSize={100}
+          isViscous
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={3000}
+          autoRampDuration={0.6}
+        />
+      </div>
+
       {/* Decorative sparkle */}
-      <div className="absolute top-1/4 right-[15%] hidden md:block">
+      <div className="absolute top-1/4 right-[15%] hidden md:block z-10">
         <motion.svg
           width="60" height="60" viewBox="0 0 60 60" fill="none"
           className="text-foreground"
@@ -16,7 +38,7 @@ const HeroSection = () => {
         </motion.svg>
       </div>
 
-      <div className="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center">
+      <div className="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center relative z-10">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -87,7 +109,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="md:hidden mt-10 flex justify-center"
+        className="md:hidden mt-10 flex justify-center relative z-10"
       >
         <img
           src={profileImg}
@@ -96,10 +118,10 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display">
+      <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display z-10">
         Software Developer
       </div>
-      <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 text-sm text-muted-foreground font-display">
+      <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 text-sm text-muted-foreground font-display z-10">
         2026
       </div>
     </section>
