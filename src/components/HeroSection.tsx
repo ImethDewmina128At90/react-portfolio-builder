@@ -49,39 +49,17 @@ const HeroSection = () => {
             Computer Science Undergraduate
           </motion.p>
 
-          <motion.div
+          <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <div className="relative h-[80px] sm:h-[110px] md:h-[130px] lg:h-[170px] w-full">
-              <TextPressure
-                text="Imeth"
-                flex
-                alpha={false}
-                stroke={false}
-                width
-                weight
-                italic
-                textColor="hsl(0, 72%, 40%)"
-                strokeColor="#5227FF"
-                minFontSize={36}
-              />
-            </div>
-            <div className="relative h-[60px] sm:h-[90px] md:h-[110px] lg:h-[130px] w-full mt-2">
-              <TextPressure
-                text="Dewina."
-                flex
-                alpha={false}
-                stroke={false}
-                width
-                weight
-                italic={false}
-                textColor="hsl(0, 0%, 92%)"
-                strokeColor="#5227FF"
-                minFontSize={30}
-              />
-            </div>
-          </motion.div>
+            <span className="font-serif-display text-primary text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
+              Imeth
+            </span>
+            <span className="font-display font-bold text-foreground text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
+              Dewina.
+            </span>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
