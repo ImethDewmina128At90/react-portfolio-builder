@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const technicalSkills = [
   "Python", "Java", "JavaScript", "TypeScript",
   "Node.js", "Express", "React", "React Native",
@@ -9,12 +11,29 @@ const softSkills = [
   "Critical Thinking", "Teamwork", "Problem Solving", "Kind & Empathetic",
 ];
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-6 md:px-16 lg:px-24">
+    <motion.section
+      id="about"
+      className="py-24 px-6 md:px-16 lg:px-24"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={sectionVariants}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
-          <div>
+          <motion.div variants={itemVariants}>
             <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8">
               About Me
             </h2>
@@ -24,8 +43,8 @@ const AboutSection = () => {
             <p className="text-muted-foreground leading-relaxed">
               Beyond coding, I play cricket for IIT, volunteer for events like IET Summer School, and regularly attend technical workshops to stay current with emerging technologies.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div variants={itemVariants}>
             <div className="mb-8">
               <p className="text-xs text-muted-foreground font-display uppercase tracking-[0.2em] mb-4">Languages</p>
               <div className="flex flex-wrap gap-3">
@@ -34,11 +53,10 @@ const AboutSection = () => {
                 <span className="border border-border text-foreground px-4 py-2 rounded text-sm font-display">Tamil (Basic)</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Skills grid - editorial style */}
-        <div className="border-t border-border pt-12">
+        <motion.div className="border-t border-border pt-12" variants={itemVariants}>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-xs text-muted-foreground font-display uppercase tracking-[0.2em] mb-6">Technical Skills</p>
@@ -61,9 +79,9 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

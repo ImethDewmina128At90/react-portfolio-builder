@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { BookOpen, Award } from "lucide-react";
 
 const education = [
@@ -36,27 +37,41 @@ const certificates = [
   "React – The Complete Guide (incl. Next.js, Redux)",
 ];
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
 const EducationSection = () => {
   return (
-    <section id="education" className="py-24 px-6 md:px-16 lg:px-24 border-t border-border">
+    <motion.section
+      id="education"
+      className="py-24 px-6 md:px-16 lg:px-24 border-t border-border"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={sectionVariants}
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-16">
+        <motion.h2 variants={itemVariants} className="font-serif-display text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-16">
           Education
-        </h2>
+        </motion.h2>
 
         <div className="space-y-8 mb-20">
           {education.map((edu, i) => (
-            <div key={i} className="group">
+            <motion.div key={i} variants={itemVariants} className="group">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground">{edu.degree}</h3>
                 <span className="text-sm text-primary font-display tracking-wider">{edu.period}</span>
               </div>
               <p className="text-foreground/80 font-medium">{edu.institution}</p>
-              {edu.affiliate && (
-                <p className="text-muted-foreground text-sm mt-1">{edu.affiliate}</p>
-              )}
+              {edu.affiliate && <p className="text-muted-foreground text-sm mt-1">{edu.affiliate}</p>}
               <div className="w-full h-px bg-border mt-4" />
-
               {Object.keys(edu.modules).length > 0 && (
                 <div className="mt-6 grid sm:grid-cols-2 gap-8">
                   {Object.entries(edu.modules).map(([year, mods]) => (
@@ -66,21 +81,18 @@ const EducationSection = () => {
                       </p>
                       <ul className="space-y-1.5">
                         {mods.map((mod) => (
-                          <li key={mod} className="text-sm text-muted-foreground pl-4 border-l border-border">
-                            {mod}
-                          </li>
+                          <li key={mod} className="text-sm text-muted-foreground pl-4 border-l border-border">{mod}</li>
                         ))}
                       </ul>
                     </div>
                   ))}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Certificates */}
-        <div>
+        <motion.div variants={itemVariants}>
           <p className="text-xs text-muted-foreground font-display uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
             <Award size={14} className="text-primary" /> Certificates & Courses
           </p>
@@ -91,9 +103,9 @@ const EducationSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
