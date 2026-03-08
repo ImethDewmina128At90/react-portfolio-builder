@@ -8,7 +8,7 @@ import Stack from "./Stack";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-16 lg:px-24 pt-20 pb-16 relative overflow-hidden">
       {/* LiquidEther background */}
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <LiquidEther
@@ -56,10 +56,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <span className="font-serif-display text-primary text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
+            <span className="font-serif-display text-primary text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
               Imeth
             </span>
-            <span className="font-display font-bold text-foreground text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
+            <span className="font-display font-bold text-foreground text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
               Dewina.
             </span>
           </motion.h1>
@@ -67,7 +67,7 @@ const HeroSection = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-base sm:text-lg max-w-lg leading-relaxed mt-10"
+            className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-lg leading-relaxed mt-6 sm:mt-10"
           >
             A motivated, detail-oriented CS student passionate about web/software development and DevOps/cloud computing. Eager to contribute to innovative projects.
           </motion.p>
@@ -75,18 +75,18 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-4 mt-10"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-10"
           >
-            <a href="#projects" className="bg-primary text-primary-foreground px-8 py-3.5 rounded font-display font-medium hover:opacity-90 transition-opacity">
+            <a href="#projects" className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-3.5 rounded font-display font-medium hover:opacity-90 transition-opacity text-center text-sm sm:text-base">
               View Work
             </a>
-            <a href="#contact" className="border border-border px-8 py-3.5 rounded font-display font-medium text-foreground hover:bg-secondary transition-colors">
+            <a href="#contact" className="border border-border px-6 sm:px-8 py-3 sm:py-3.5 rounded font-display font-medium text-foreground hover:bg-secondary transition-colors text-center text-sm sm:text-base">
               Contact
             </a>
             <a
               href="/Imeth_Dewina_CV.pdf"
               download
-              className="border border-primary text-primary px-8 py-3.5 rounded font-display font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="border border-primary text-primary px-6 sm:px-8 py-3 sm:py-3.5 rounded font-display font-medium hover:bg-primary hover:text-primary-foreground transition-colors text-center text-sm sm:text-base"
             >
               Download CV
             </a>
@@ -126,7 +126,7 @@ const HeroSection = () => {
         transition={{ delay: 0.4 }}
         className="md:hidden mt-10 flex justify-center relative z-10"
       >
-        <div className="w-48 aspect-[3/4]">
+        <div className="w-40 sm:w-48 aspect-[3/4]">
           <Stack
             randomRotation
             sensitivity={200}
@@ -146,10 +146,10 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      <div className="absolute bottom-10 left-6 md:left-16 lg:left-24 text-sm text-muted-foreground font-display z-10">
+      <div className="absolute bottom-6 sm:bottom-10 left-4 sm:left-6 md:left-16 lg:left-24 text-xs sm:text-sm text-muted-foreground font-display z-10">
         Software Developer
       </div>
-      <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 text-sm text-muted-foreground font-display z-10">
+      <div className="absolute bottom-6 sm:bottom-10 right-4 sm:right-6 md:right-16 lg:right-24 text-xs sm:text-sm text-muted-foreground font-display z-10">
         2026
       </div>
     </section>
