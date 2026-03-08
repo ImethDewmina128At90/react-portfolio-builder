@@ -12,7 +12,7 @@ const Index = () => {
     <ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
       <div className="min-h-screen bg-background relative">
         {/* Global LiquidEther background */}
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0 pointer-events-none">
           <LiquidEther
             colors={['#5227FF', '#FF9FFC', '#B19EEF']}
             mouseForce={20}
