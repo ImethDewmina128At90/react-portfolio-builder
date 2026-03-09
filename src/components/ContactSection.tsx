@@ -70,7 +70,7 @@ const ContactSection = () => {
 
         <div className="mt-12 sm:mt-20 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs sm:text-sm text-muted-foreground font-display">
           <span>Software Developer</span>
-          <span>© 2026 Imeth Dewina</span>
+          <span>© 2026 Imeth Dewmina</span>
         </div>
       </div>
     </motion.section>

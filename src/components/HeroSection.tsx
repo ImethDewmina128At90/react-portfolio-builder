@@ -63,7 +63,7 @@ const HeroSection = () => {
               Contact
             </a>
             <a
-              href="/Imeth_Dewina_CV.pdf"
+              href="/Imeth_Dewmina_CV.pdf"
               download
               className="border border-primary text-primary px-6 sm:px-8 py-3 sm:py-3.5 rounded font-display font-medium hover:bg-primary hover:text-primary-foreground transition-colors text-center text-sm sm:text-base"
             >
