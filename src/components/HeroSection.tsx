@@ -39,7 +39,7 @@ const HeroSection = () => {
               Imeth
             </span>
             <span className="font-display font-bold text-foreground text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
-              Dewina.
+              Dewmina.
             </span>
           </motion.h1>
 
