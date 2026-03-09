@@ -117,7 +117,7 @@ const HeroSection = () => {
               <img
                 key={i}
                 src={src}
-                alt={`Imeth Dewina ${i + 1}`}
+                alt={`Imeth Dewmina ${i + 1}`}
                 className="w-full h-full object-cover pointer-events-none"
               />
             ))}
