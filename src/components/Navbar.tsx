@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="flex items-center justify-between px-6 md:px-16 lg:px-24 h-16">
-        <a href="#" className="font-display font-bold text-lg text-foreground">Imeth Dewina</a>
+        <a href="#" className="font-display font-bold text-lg text-foreground">Imeth Dewmina</a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a key={l.label} href={l.href} className="text-sm font-display text-muted-foreground hover:text-foreground transition-colors">
