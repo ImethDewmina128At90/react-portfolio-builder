@@ -36,10 +36,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <span className="font-serif-display text-primary text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] block">
-              Imeth
-            </span>
-            <span className="font-display font-bold text-foreground text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9] block mt-2">
-              Dewmina.
+              ImethDewmina
             </span>
           </motion.h1>
 
@@ -90,7 +87,7 @@ const HeroSection = () => {
                 <img
                   key={i}
                   src={src}
-                  alt={`Imeth Dewmina ${i + 1}`}
+                  alt={`ImethDewmina ${i + 1}`}
                   className="w-full h-full object-cover pointer-events-none"
                 />
               ))}
@@ -117,7 +114,7 @@ const HeroSection = () => {
               <img
                 key={i}
                 src={src}
-                alt={`Imeth Dewmina ${i + 1}`}
+                alt={`ImethDewmina ${i + 1}`}
                 className="w-full h-full object-cover pointer-events-none"
               />
             ))}
