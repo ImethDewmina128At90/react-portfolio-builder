@@ -33,8 +33,8 @@ const certificates = [
   "Cisco IT Essentials",
   "Node.js Complete Developer – Andrew Mead",
   "AWS Cloud Practitioner",
-  "React Native – The Practical Guide",
-  "React – The Complete Guide (incl. Next.js, Redux)",
+  "React Native – The Practical Guide (OnGoing)",
+  "React – The Complete Guide (incl. Next.js, Redux)(OnGoing)",
 ];
 
 const sectionVariants = {
