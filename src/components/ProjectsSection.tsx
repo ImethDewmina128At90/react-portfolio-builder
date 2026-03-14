@@ -21,7 +21,7 @@ const projects = [
     title: "Java QuizGame",
     subtitle: "Desktop Project",
     description: "A Java-based desktop quiz game where users can add multiple questions across different categories with a grading system, integrated with MySQL database.",
-    tags: ["Java", "MySQL", "Oct 2025"],
+    tags: ["Java", "MySQL","OOP", "Oct 2025"],
     number: "03",
   },
   {
