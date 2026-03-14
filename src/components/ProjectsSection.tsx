@@ -1,4 +1,6 @@
+import { Description } from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
+import { title } from "process";
 
 const projects = [
   {
@@ -22,6 +24,13 @@ const projects = [
     tags: ["Java", "MySQL", "Oct 2025"],
     number: "03",
   },
+  {
+    title:"Personal PortFolio",
+    subtitle:"Web Project",
+    description:"Personal portfolio featuring my own documentation",
+    tags:["React","Tailwind Css","TypeScript","March 2026"],
+    number:"04",
+  }
 ];
 
 const sectionVariants = {
