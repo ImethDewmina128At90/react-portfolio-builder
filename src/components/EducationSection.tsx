@@ -27,6 +27,7 @@ const education = [
     period: "Completed",
     modules: {"A/L":["Maths Stream"]},
   },
+]
   
 
 const certificates = [
