@@ -41,7 +41,7 @@ const AboutSection = () => {
               I'm a Computer Science undergraduate at the University of Westminster (affiliated with Informatics Institute of Technology), based in Colombo, Sri Lanka. I have a strong interest in web/software development and DevOps/cloud computing.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Beyond coding, I play cricket for IIT, volunteer for events like IET Summer School, and regularly attend technical workshops to stay current with emerging technologies.
+              Beyond IT-related stuff, I played cricket for IIT, volunteer for events like IET Summer School, and attending technical workshops to stay current with emerging technologies.
             </p>
           </motion.div>
           <motion.div variants={itemVariants}>
