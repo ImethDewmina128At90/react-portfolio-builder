@@ -4,7 +4,7 @@ const technicalSkills = [
   "Python", "Java", "JavaScript", "TypeScript",
   "Node.js", "Express", "React", "React Native",
   "AWS", "GCP (Firebase)", "MySQL", "MongoDB",
-  "Git", "GitHub", "Linux", "Postman",
+  "Git", "GitHub", "Linux", "Postman","PHP","PhotoShop","XML",
 ];
 
 const softSkills = [
