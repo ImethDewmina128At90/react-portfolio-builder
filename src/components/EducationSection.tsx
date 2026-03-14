@@ -25,9 +25,9 @@ const education = [
     institution: "Gampaha Bandaranayake College",
     affiliate: "",
     period: "Completed",
-    modules: {},
+    modules: {"A/L":["Maths Stream"]},
   },
-];
+  
 
 const certificates = [
   "Cisco IT Essentials",
