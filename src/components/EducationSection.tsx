@@ -34,8 +34,9 @@ const certificates = [
   "Cisco IT Essentials",
   "Node.js Complete Developer – Andrew Mead",
   "AWS Cloud Practitioner",
-  "React Native – The Practical Guide (OnGoing)",
-  "React – The Complete Guide (incl. Next.js, Redux)(OnGoing)",
+  "React Native – The Practical Guide (On Going)",
+  "React – The Complete Guide (incl. Next.js, Redux) (On Going)",
+  "Master AWS Solutions Architect Skills: From Basics to Certification with SAA-C03(On Going)"
 ];
 
 const sectionVariants = {
