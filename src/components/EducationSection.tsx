@@ -25,7 +25,7 @@ const education = [
     institution: "Gampaha Bandaranayake College",
     affiliate: "",
     period: "Completed",
-    modules: {"A/L":["Maths Stream"]},
+    modules: {"A/L":["Physical Science Stream"]},
   },
 ]
   

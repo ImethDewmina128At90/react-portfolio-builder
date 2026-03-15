@@ -27,7 +27,7 @@ const projects = [
   {
     title:"Personal PortFolio",
     subtitle:"Web Project",
-    description:"Personal portfolio featuring my own documentation",
+    description:"Personal portfolio ",
     tags:["React","Tailwind Css","TypeScript","March 2026"],
     number:"04",
   }
