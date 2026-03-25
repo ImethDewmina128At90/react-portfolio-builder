@@ -30,7 +30,15 @@ const projects = [
     description:"Personal portfolio ",
     tags:["React","Tailwind Css","TypeScript","March 2026"],
     number:"04",
+  },
+    {
+    title: "Note-Taker App",
+    subtitle: "Web Project",
+    description: "Used MERN stack and Redis",
+    tags: ["Javascript", "Node","MongoDB","React","TailwindCss","Redis", "Oct 2025"],
+    number: "04",
   }
+
 ];
 
 const sectionVariants = {
