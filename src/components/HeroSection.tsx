@@ -83,7 +83,7 @@ const HeroSection = () => {
               autoplay
               autoplayDelay={2500}
               pauseOnHover
-              cards={[profileImg, cv2Img, imethb2Img].map((src, i) => (
+              cards={[profileImg, imethb2Img].map((src, i) => (
                 <img
                   key={i}
                   src={src}
