@@ -36,7 +36,7 @@ const projects = [
     subtitle: "Web Project",
     description: "Used MERN stack and Redis",
     tags: ["Javascript", "Node","MongoDB","React","TailwindCss","Redis", "Oct 2025"],
-    number: "04",
+    number: "05",
   }
 
 ];
