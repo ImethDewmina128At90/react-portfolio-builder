@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/imeth-profile.jpg";
-import cv2Img from "@/assets/cv_2.png";
-import imethb2Img from "@/assets/imethb-2.jpg";
+import imethb2Img from "@/assets/imethb.jpg";
 import Stack from "./Stack";
 
 
@@ -110,7 +109,7 @@ const HeroSection = () => {
             autoplay
             autoplayDelay={2500}
             pauseOnHover
-            cards={[profileImg, cv2Img, imethb2Img].map((src, i) => (
+            cards={[profileImg, imethb2Img].map((src, i) => (
               <img
                 key={i}
                 src={src}
