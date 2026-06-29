@@ -13,7 +13,7 @@ const education = [
         "Software Development (Python)", "Software Development 2 (Java)",
         "Trends in Computer Science", "Web Design and Development",
       ],
-      "Year 2 (In Progress)": [
+      "Year 2 (Completed)": [
         "Database Systems", "Object-Oriented Programming",
         "Software Development Group Project", "Server-Side Web Development",
         "Data Structures and Algorithms", "Client-Server Architecture",
